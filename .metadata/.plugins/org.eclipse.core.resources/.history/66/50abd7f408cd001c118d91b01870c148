@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/users" name="usersAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="DELETE POST PUT GET" url-mapping="/sign-in">
+        <inSequence>
+            <log description="Sign in"/>
+            <send>
+                <endpoint key="userSignIn"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log description="Sign in response"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

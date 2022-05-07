@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/movies" name="movieAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="DELETE POST PUT GET" url-mapping="/add">
+        <inSequence>
+            <log description="Add movie request"/>
+            <send>
+                <endpoint key="addMovie"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log description="Add movie response"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

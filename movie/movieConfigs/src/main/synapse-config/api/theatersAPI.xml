@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/theaters" name="theatersAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="DELETE POST PUT GET">
+        <inSequence>
+            <log description="Theaters request"/>
+            <send>
+                <endpoint key="fetchTheaters"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log description="Theaters response"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/api" name="CartAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="DELETE POST PUT GET" url-mapping="/getUsers">
+        <inSequence>
+            <log description="getUsersProfile req"/>
+            <send/>
+        </inSequence>
+        <outSequence>
+            <log description="getUsersProfile res"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE POST PUT GET" url-mapping="/addSurvey">
+        <inSequence>
+            <log description="addSurvey req"/>
+            <send>
+                <endpoint key="addSurvey"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log description="addSurvey res"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

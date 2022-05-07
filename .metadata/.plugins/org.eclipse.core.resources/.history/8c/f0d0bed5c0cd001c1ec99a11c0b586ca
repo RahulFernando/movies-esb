@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/carts" name="cartAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="DELETE POST PUT GET">
+        <inSequence>
+            <log description="Add to cart request"/>
+            <send/>
+        </inSequence>
+        <outSequence>
+            <log description="Add to cart response"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

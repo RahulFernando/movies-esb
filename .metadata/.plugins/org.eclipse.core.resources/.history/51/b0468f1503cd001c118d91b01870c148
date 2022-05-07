@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/api" name="CartAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="DELETE POST PUT GET" url-mapping="/getListFiles">
+        <inSequence>
+            <log description="Get file list request"/>
+            <send>
+                <endpoint key="getListFiles"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log description="Get file list response"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE POST PUT GET" url-mapping="/handleFileUpload">
+        <inSequence>
+            <log description="File upload request"/>
+            <send>
+                <endpoint key="handleFileUpload"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log description="File upload response"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE POST PUT GET" url-mapping="/getFile">
+        <inSequence>
+            <log description="Get file request"/>
+            <send>
+                <endpoint key="getFile"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log description="Get file response"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

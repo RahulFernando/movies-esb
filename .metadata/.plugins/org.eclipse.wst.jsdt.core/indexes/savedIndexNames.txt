@@ -1,0 +1,1 @@
+INDEX VERSION 1.4+C:\Users\OIT\OneDrive\Desktop\esb\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes

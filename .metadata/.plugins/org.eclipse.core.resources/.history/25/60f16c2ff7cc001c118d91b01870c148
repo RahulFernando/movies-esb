@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/api" name="CartAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="DELETE POST PUT GET" url-mapping="getProducts">
+        <inSequence>
+            <log description="getProducts req"/>
+            <send>
+                <endpoint key="getProducts"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log description="getProducts res"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE POST PUT GET" url-mapping="/addProduct">
+        <inSequence>
+            <log description="&#xd;&#xa;addProduct req"/>
+            <send>
+                <endpoint key="addProduct"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log description="&#xd;&#xa;addProduct res"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE POST PUT GET" url-mapping="/updateProduct">
+        <inSequence>
+            <log description="updateProduct req"/>
+            <send>
+                <endpoint key="updateProduct"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log description="updateProduct res"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

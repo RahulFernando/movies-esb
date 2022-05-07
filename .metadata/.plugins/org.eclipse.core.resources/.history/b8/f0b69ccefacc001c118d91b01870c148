@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/api" name="CartAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="DELETE POST PUT GET" url-mapping="/getCartItems">
+        <inSequence>
+            <log description="Get cart items req"/>
+            <send>
+                <endpoint key="getCartItems"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log description="Get cart items res"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE POST PUT GET" url-mapping="/addToCart">
+        <inSequence>
+            <log description="Add to cart req"/>
+            <send>
+                <endpoint key="addToCart"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log description="Add to cart res"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE POST PUT GET" url-mapping="/deleteCartItem">
+        <inSequence>
+            <log description="Delete cart item req"/>
+            <send>
+                <endpoint key="deleteCartItem"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log description="Delete cart item res"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE POST PUT GET" url-mapping="/updateCartItem">
+        <inSequence>
+            <log description="Update cart item req"/>
+            <send>
+                <endpoint key="updateCartItem"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log description="Update cart item res"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

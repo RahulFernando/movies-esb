@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/users" name="usersAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="DELETE POST PUT GET" url-mapping="/sign-in">
+        <inSequence>
+            <property name="Access-Control-Allow-Origin" scope="transport" type="STRING" value="*"/>
+            <property name="Access-Control-Allow-Methods" scope="transport" type="STRING" value="GET,PUT,POST,DELETE,PATCH,OPTIONS"/>
+            <property name="Access-Control-Allow-Headers" scope="transport" type="STRING" value="Authorization,Access-Control-Allow-Origin,Content-Type"/>
+            <log description="Sign in"/>
+            <send>
+                <endpoint key="userSignIn"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log description="Sign in response"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

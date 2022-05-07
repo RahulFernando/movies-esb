@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/movies" name="movieAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="DELETE POST PUT GET" url-mapping="/add">
+        <inSequence>
+            <log description="Add movie request"/>
+            <send>
+                <endpoint key="addMovie"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log description="Add movie response"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE POST PUT GET" url-mapping="/get">
+        <inSequence>
+            <log description="Fetch movies request">
+                <property expression="get-property(&quot;query.param.search&quot;)" name="Message"/>
+            </log>
+            <send>
+                <endpoint key="fetchMovies"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log description="Fetch movies response"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE POST PUT GET" uri-template="/delete/{id}">
+        <inSequence>
+            <log>
+                <property expression="get-property(&quot;uri.var.id&quot;)" name="Message"/>
+            </log>
+            <send>
+                <endpoint key="deleteMovie"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log description="Delete movie response"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET">
+        <inSequence>
+            <log description="Update movie request"/>
+            <send>
+                <endpoint key="updateMovie"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log description="Update movie response"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>
